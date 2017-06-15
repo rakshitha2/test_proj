@@ -15,7 +15,10 @@ stage ('Build') {
   
 }
 stage ('push_jenkinsfile') {
-     bat("git tag -a some_tag -m 'Jenkins'") 
-     bat('git push https://${rakshitha2}:${devops2017}@https://github.com/rakshitha2/test_proj.git --tags') 
+
+     bat("git config --global http.proxy http://rakshitha.a:Welcome27@blr-sezproxy.hcl.com:8080)
+     bat("git config --global https.proxy http://rakshitha.a:Welcome27@blr-sezproxy.hcl.com:8080)
+     bat("git tag -a some_tag1 -m 'Jenkins'") 
+     bat('git push https://${rakshitha2}:${devops2017}@https://github.com/rakshitha2/test_proj.git') 
 }
 }
